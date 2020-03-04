@@ -1,4 +1,4 @@
-# bnc-resource-frontend
+# bnc-resource-app
 
 ## Project setup
 ```
