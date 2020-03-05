@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>{{ title }}</h1>
+    <h1><div id="title-left">{{ title }}</div> {{ section }}</h1>
   </div>
 </template>
 
@@ -8,7 +8,8 @@
 export default {
   name: 'Card',
   props: {
-    title: String
+    title: String,
+    section: String
   }
 }
 </script>
@@ -21,6 +22,12 @@ export default {
 
 h1 {
   font-size: 48px;
-  padding: 50px 0px 0px 15px;
+  padding: 80px 0px 20px 0px;
+  color: #A95659; /*#2c3e50;*/
+}
+
+#title-left {
+  color: #3E5871;
+  display: inline;
 }
 </style>
