@@ -38,19 +38,19 @@ export default {
   margin: 8px;
   padding: 30px 20px 5px 40px;
   vertical-align: top;
-  background-color: #3E5871;
+  background-color: rgba(78, 54, 41, 0.9);/*#4E3629;*/
   color: white;
-  border-radius: 5px;
   min-height: 100px;
   text-align: left;
+
+  -moz-box-shadow: 0px 0px 2px 0px  #98A4AE;
+   -webkit-box-shadow: 0px 0px 2px 0px  #98A4AE;
+    box-shadow: 0px 0px 2px 0px  #98A4AE;
 }
 
 a {
   color: white;
   text-decoration: none;
-}
-
-h1 {
 }
 
 p {
@@ -61,15 +61,20 @@ p {
   width: 50px;
   display: inline-block;
   padding: 0px 30px 8px 0px;
+  color: white;
 }
 .card-info {
   display: inline-block;
   margin-bottom: 40px;
 }
+
 .resource-go {
   position: absolute;
   right: 30px;
   bottom: 20px;
   font-weight: bold;
+}
+.resource-go:hover {
+  color: #FFC72C;
 }
 </style>

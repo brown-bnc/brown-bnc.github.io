@@ -1,26 +1,31 @@
 <template>
   <div id="app">
+    <NavBar :links="links" :logo="require('./assets/brown-logo.png')"/>
     <Header title="Behavioral Neuroimaging Core:" section="Resources"/>
     <p :v-bind="resources"></p>
-    <CardHolder v-for="(item, key) in separateCategories(resourcesRaw)" :key="key" :resources="item" :title="key" />
+    <CardHolder v-for="(item, key) in separateCategories(resourcesRaw)" :key="key" :resources="item" />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import yaml from 'js-yaml'
+import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
 import CardHolder from './components/CardHolder.vue'
 
 export default {
   name: 'App',
   components: {
+    NavBar,
     Header,
     CardHolder
   },
   data() {
     return {
-      resourcesRaw: []
+      resourcesRaw: [],
+      links: [{'url': 'https://www.brown.edu/carney/mri/', 'name': 'MRF Facility'},
+              {'url': 'https://www.brown.edu/carney/', 'name': 'Carney'}]
     }
   },
   created() {
@@ -71,8 +76,8 @@ export default {
 
 body {
   padding-bottom: 100px;
-  background-color: #F8F8FF;
-  border-bottom: 30px solid #3E5871;
+  background-color: rgba(89, 203, 232, 0.1); /*rgba(152, 164, 174, 0.1);*/
+  border-bottom: 30px solid #4E3629;
 }
 
 #app {

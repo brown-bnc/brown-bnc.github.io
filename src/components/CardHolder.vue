@@ -1,6 +1,6 @@
 <template>
   <div class="cardholder">
-    <h1>{{title}}</h1>
+    <h1 v-if="title">{{title}}</h1>
     <Card v-for="item in resources" :key="item.id" :resource="item"></Card>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
   props: {
     title: String,
-    resources: Object
+    resources: Array
   }
 }
 </script>
@@ -23,12 +23,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .cardholder {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 h1 {
-  width: 50%;
+  width: 54%;
   margin: auto;
   text-align: left;
-  color: #A95659; /*#713E58;*/
+  color: #4E3629;
 }
 </style>
