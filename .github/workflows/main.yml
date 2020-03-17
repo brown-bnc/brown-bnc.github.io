@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -21,6 +21,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
+        BASE_BRANCH: develop
+        BRANCH: master
         FOLDER: dist 
