@@ -32,7 +32,5 @@ jobs:
     - name: Upload app to release - linux
       if: startsWith(matrix.os, 'ubuntu')
       uses: softprops/action-gh-release@v1
-      #with:
-      #  files: dist/installers/${{ steps.package_info.outputs.package_name }}_${{ steps.package_info.outputs.package_version }}_x64.deb
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
