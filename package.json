@@ -1,6 +1,6 @@
 {
-  "name": "bnc-resource-frontend",
-  "version": "0.1.0",
+  "name": "brown-bnc-landing",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
