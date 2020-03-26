@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -28,14 +30,14 @@ jobs:
     - name: Build
       run: npm run-script build
     
-    - name: Zip Folder
-      run: zip -r ${{ steps.package_info.outputs.package_name }}_${{ steps.package_info.outputs.package_version }}.zip dist/ -x ".git/*" ".github/*"
+    #- name: Zip Folder
+    #  run: zip -r ${{ steps.package_info.outputs.package_name }}_${{ steps.package_info.outputs.package_version }}.zip dist/ -x ".git/*" ".github/*"
 
     # Upload installers to github release
     - name: Upload app to release - linux
       if: startsWith(matrix.os, 'ubuntu')
       uses: softprops/action-gh-release@v1
-      with:
-        files: ${{ steps.package_info.outputs.package_name }}_${{ steps.package_info.outputs.package_version }}.zip
+      #with:
+      #  files: ${{ steps.package_info.outputs.package_name }}_${{ steps.package_info.outputs.package_version }}.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
