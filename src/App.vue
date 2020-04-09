@@ -2,8 +2,11 @@
   <div id="app">
     <NavBar :links="links" :logo="require('./assets/brown-logo.png')"/>
     <Header title="Behavioral Neuroimaging Core:" section="Resources"/>
-    <p :v-bind="resources"></p>
-    <CardHolder v-for="(item, key) in separateCategories(resourcesRaw)" :key="key" :resources="item" />
+    <div class="content">
+      <p :v-bind="resources"></p>
+      <CardHolder v-for="(item, key) in separateCategories(resourcesRaw)" :key="key" :resources="item" />
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -13,13 +16,15 @@ import yaml from 'js-yaml'
 import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
 import CardHolder from './components/CardHolder.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     NavBar,
     Header,
-    CardHolder
+    CardHolder,
+    Footer
   },
   data() {
     return {
@@ -75,9 +80,11 @@ export default {
 }
 
 body {
-  padding-bottom: 100px;
   background-color: rgba(89, 203, 232, 0.1); /*rgba(152, 164, 174, 0.1);*/
-  border-bottom: 30px solid #4E3629;
+}
+
+.content {
+  padding-bottom: 100px;
 }
 
 #app {
